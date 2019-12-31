@@ -47,6 +47,7 @@ def get_articles():
     articles = []
     for keyword in keywords:
         articles += get_list(keyword)
+    articles.sort(key=lambda x: x['publishedAt'], reverse=True)
     return render_articles(articles)
 
 
